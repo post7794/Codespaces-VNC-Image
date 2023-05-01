@@ -66,3 +66,13 @@
 	// "oryx build" will automatically install your dependencies and attempt to build your project
 	"postCreateCommand": "oryx build -p virtualenv_name=.venv --log-file /tmp/oryx-build.log --manifest-dir /tmp || echo 'Could not auto-build. Skipping.'"
 }
+{
+    "image": "ghcr.io/markpatterson27/codespaces-vnc-image:universal",
+    "forwardPorts": [6080],
+    "portsAttributes": {
+        "6080": {
+            "label": "noVNC Viewer",
+            "onAutoForward": "openBrowser"
+        }
+    }
+}
